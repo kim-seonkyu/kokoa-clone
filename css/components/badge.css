@@ -1,0 +1,30 @@
+.badge {
+  background-color: tomato;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 600;
+}
+
+.badge__dot {
+  background-color: tomato;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  position: relative;
+  left: 30px;
+}
+
+.badge-setting-find {
+  left: 95px;
+  bottom: 23px;
+}
+
+.badge-setting-more {
+  left: 145px;
+  bottom: 23px;
+}
