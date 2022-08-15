@@ -28,3 +28,19 @@
   left: 145px;
   bottom: 23px;
 }
+
+.badge__new {
+  background-color: tomato;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 600;
+  font-size: 11px;
+  position: absolute;
+  right: -30px;
+  bottom: 0px;
+}
