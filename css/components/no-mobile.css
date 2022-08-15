@@ -33,7 +33,7 @@
 }
 
 @media screen and (orientation: portrait) {
-  #no-mobile {
+  #no-landscape {
     display: none;
   }
 } */
