@@ -18,7 +18,7 @@
   }
 }
 
-#no-landscape {
+/* #no-landscape {
   position: absolute;
   z-index: 99;
   height: 100vh;
@@ -33,7 +33,7 @@
 }
 
 @media screen and (orientation: portrait) {
-  #no-landscape {
+  #no-mobile {
     display: none;
   }
-}
+} */
