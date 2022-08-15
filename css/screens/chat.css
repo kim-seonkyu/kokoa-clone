@@ -1,6 +1,6 @@
 #chat-screen {
   background-color: #abc1d1;
-  height: 10000vh;
+  height: 500vh;
 }
 
 #chat-screen .status-bar {
@@ -16,11 +16,23 @@
   background-color: #abc1d1;
 }
 
+@keyframes fadeIn {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
 .main-chat {
-  margin-top: 100px;
+  margin-top: 120px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: fadeIn 0.9s linear;
 }
 
 .chat__timestamp {
@@ -36,6 +48,8 @@
   width: 100%;
   display: flex;
   margin-bottom: 25px;
+  transform: translateX(-50vw);
+  animation: Receive 1s linear forwards;
 }
 
 .message-row img {
@@ -71,6 +85,9 @@
 
 .message-row--own {
   justify-content: flex-end;
+  transform: translateX(50vw);
+  animation: Send 1s linear forwards;
+  animation-delay: 3s;
 }
 
 .message-row--own .message__bubble {
@@ -95,6 +112,7 @@
   padding: 5px 25px;
   align-items: center;
   box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
 }
 .reply .reply__column:first-child {
   width: 10%;
@@ -113,26 +131,28 @@
   width: 100%;
   border: var(--main-border);
   border-radius: 20px;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
 }
 
 .reply__column:last-child > i,
 .reply__column:last-child button {
   position: absolute;
-  right: -20px;
-  top: 5px;
+  right: 0px;
+  top: 2px;
 }
 
 .reply__column:last-child > i {
-  right: 15px;
+  right: 40px;
   top: 20px;
 }
 
 .reply__column button {
   background-color: var(--yellow);
   border: none;
-  width: 30px;
-  height: 30px;
-  border-radius: 15px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
 }
 
 .reply__column button i {
@@ -142,4 +162,45 @@
 .reply__column button:focus,
 .reply__column button:active {
   outline: none;
+}
+
+.reply .reply__column:first-child,
+.reply .fa-face-smile,
+.reply button {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.reply:focus-within .reply__column:first-child,
+.reply:focus-within .fa-face-smile,
+.reply:focus-within button {
+  opacity: 0;
+}
+
+.reply input:focus {
+  width: 95vw;
+  transform: translateX(-13%) translateY(-80px);
+}
+
+.reply:focus-within {
+  transform: translateY(80px);
+}
+
+@keyframes Receive {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes Send {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
